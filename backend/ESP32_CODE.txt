@@ -1,0 +1,47 @@
+/*
+ * Bus Simulator Display - ESP32-S3 Client
+ * 
+ * SCHRITT-FÜR-SCHRITT ANLEITUNG:
+ * 
+ * 1. Kopieren Sie diesen gesamten Code
+ * 2. Öffnen Sie Arduino IDE
+ * 3. Erstellen Sie eine neue Sketch-Datei (Datei → Neu)
+ * 4. Fügen Sie diesen Code ein
+ * 5. ÄNDERN Sie die WLAN-Zugangsdaten unten (Zeile 35-36)
+ * 6. Speichern Sie als "esp32_display.ino"
+ * 7. Wählen Sie Board: ESP32S3 Dev Module
+ * 8. Hochladen auf ESP32!
+ * 
+ * Hardware:
+ * - ESP32-S3
+ * - 4" TFT Display 480x320 (Arduino GFX Library)
+ * 
+ * Pin Configuration:
+ * TFT_SCK   = 12
+ * TFT_MOSI  = 11
+ * TFT_CS    = 10
+ * TFT_DC    = 9
+ * TFT_RST   = 8
+ */
+
+#include <WiFi.h>
+#include <WebSocketsClient.h>
+#include <Arduino_GFX_Library.h>
+#include <ArduinoJson.h>
+
+// ========== HIER IHRE DATEN EINTRAGEN! ==========
+
+// WiFi Zugangsdaten
+const char* ssid = "MeinWLAN";              // ← HIER IHR WLAN-NAME
+const char* password = "MeinPasswort123";   // ← HIER IHR WLAN-PASSWORT
+
+// WebSocket Server - BEREITS KONFIGURIERT!
+const char* ws_host = "bus-telemetry-hud.preview.emergentagent.com";
+const uint16_t ws_port = 443;
+const char* ws_path = "/ws/esp32";
+const bool use_ssl = true;
+
+// ================================================
+
+// Rest des Codes bleibt unverändert...
+// (siehe vollständige Datei esp32_display.ino)

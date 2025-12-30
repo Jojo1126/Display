@@ -1,0 +1,5 @@
+# Requirements for Bus Simulator Display - Telemetry Controller
+# Install with: pip install -r telemetry_requirements.txt
+
+pyserial>=3.5
+requests>=2.28.0
